@@ -20,12 +20,14 @@ npm install -g tmux-grid
 ## Examples
 
 - Regular window
+
   ```
   name: sample3
   command: something
   ```
 
 - Vertical split
+
   ```
   name: sample
   panes:
@@ -44,6 +46,7 @@ npm install -g tmux-grid
   ```
 
 - Vertical split with size
+
   ```
   name: sample2
   panes:

@@ -1,0 +1,24 @@
+{
+  "name": "tmux-grid",
+  "version": "1.0.0",
+  "description": "Setup and manage tmux panes using config files",
+  "scripts": {
+    "test": "node test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rjbernaldo/tmux-grid.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rjbernaldo/tmux-grid/issues"
+  },
+  "homepage": "https://github.com/rjbernaldo/tmux-grid#readme",
+  "devDependencies": {
+    "tape": "^4.6.3"
+  },
+  "dependencies": {
+    "meow": "^3.7.0"
+  }
+}

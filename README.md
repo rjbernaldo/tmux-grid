@@ -5,7 +5,7 @@ Setup and manage tmux panes using config files
 ## Installation
 
 ```
-npm install -g tmux-grid
+$ npm install -g tmux-grid
 ```
 
 ## Usage

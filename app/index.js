@@ -13,11 +13,19 @@ program
   
 if (program.config === true) return program.outputHelp();
   
-fs.readFile(program.config || config, encoding, (err, data) => {
+fs.readFile(program.config || config, encoding, (err, parsedConfig) => {
   if (err) return console.error(err.message);
   
-  // TODO: app logic here
+  var commands = translateConfig(parsedConfig)
   // TODO: error handling for unknown commands
   // TODO: better help output
-  // console.log(data);
+  
+  console.log(commands);
 });
+
+function translateConfig(config) {
+  // TODO: convert config into commands
+  config = config.split('\n');
+  
+  return config;
+}

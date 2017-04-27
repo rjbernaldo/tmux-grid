@@ -1,0 +1,11 @@
+name: sample3
+panes:
+  - type: pane-v
+    panes:
+      - type: pane-h
+        command: something1
+      - type: pane-h
+        command: something2
+  - type: pane-v
+    size: 25
+    command: log something

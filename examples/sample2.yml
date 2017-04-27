@@ -1,0 +1,14 @@
+name: sample2
+panes:
+  - type: pane-v
+    panes:
+      - type: pane-h
+        command: something1
+      - type: pane-h
+        command: something2
+  - type: pane-v
+    panes:
+      - type: pane-h
+        command: something3
+      - type: pane-h
+        command: something4

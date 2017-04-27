@@ -22,15 +22,19 @@ $ npm install -g tmux-grid
 
 - Regular window
 
+  `$ tmux-grid -c examples/sample1.yml`
+
   ```
-  name: sample3
+  name: sample1
   command: something
   ```
 
 - Vertical split
 
+  `$ tmux-grid -c examples/sample2.yml`
+
   ```
-  name: sample
+  name: sample2
   panes:
     - type: pane-v
       panes:
@@ -48,8 +52,10 @@ $ npm install -g tmux-grid
 
 - Vertical split with size
 
+  `$ tmux-grid -c examples/sample3.yml`
+
   ```
-  name: sample2
+  name: sample3
   panes:
     - type: pane-v
       panes:

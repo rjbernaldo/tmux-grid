@@ -26,6 +26,7 @@
     "tape": "^4.6.3"
   },
   "dependencies": {
-    "commander": "^2.9.0"
+    "commander": "^2.9.0",
+    "js-yaml": "^3.8.3"
   }
 }

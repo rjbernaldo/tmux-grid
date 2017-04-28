@@ -1,6 +1,7 @@
 'use strict';
 
 const program = require('commander');
+const jsyaml = require('js-yaml');
 const packageJson = require('../package.json');
 const fs = require('fs');
 const config = '.tmux-grid.yml';
@@ -13,19 +14,27 @@ program
   
 if (program.config === true) return program.outputHelp();
   
-fs.readFile(program.config || config, encoding, (err, parsedConfig) => {
+fs.readFile(program.config || config, encoding, (err, configFile) => {
   if (err) return console.error(err.message);
   
-  var commands = translateConfig(parsedConfig)
-  // TODO: error handling for unknown commands
-  // TODO: better help output
+  var parsedConfig;
   
-  console.log(commands);
+  try {
+    parsedConfig = jsyaml.load(configFile);
+  } catch(e) {
+    return console.error(e);
+  }
+  
+  var commands = translateConfig(parsedConfig)
+  
+  // TODO: better help output
 });
 
 function translateConfig(config) {
+  console.log(config)
   // TODO: convert config into commands
-  config = config.split('\n');
+  // TODO: error handling for unknown commands
+  
   
   return config;
 }

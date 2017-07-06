@@ -1,11 +1,9 @@
 name: sample3
+command: split-v
 panes:
-  - type: pane-v
+  - command: split-h
     panes:
-      - type: pane-h
-        command: something1
-      - type: pane-h
-        command: something2
-  - type: pane-v
-    size: 25
+      - command: something1
+      - command: something2
+  - size: 25
     command: log something

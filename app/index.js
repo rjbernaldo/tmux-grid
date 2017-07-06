@@ -29,11 +29,10 @@ fs.readFile(program.config || config, encoding, (err, configFile) => {
   
 
   exec('echo $TMUX', (err, stdout, stderr) => {
-    const config = translateConfig(parsedConfig)
-    const commands = []
+    const commands = translateConfig(parsedConfig)
 
-    if (stdout === '') commands.push('tmux');
-    commands.push(config.command);
+    if (stdout === '') commands.unshift('tmux');
+    // TODO: name window
 
     exec(commands, (err, stdout, stderr) => {
       console.log(stdout);
@@ -42,8 +41,14 @@ fs.readFile(program.config || config, encoding, (err, configFile) => {
 });
 
 function translateConfig(config) {
-  // TODO: convert config into commands
   // TODO: error handling for unknown commands
+  const commands = []
+
+  if (config.panes && config.panes.length % 2 === 0) {
+    console.log(config.panes);
+  }
+
+  commands.push(config.command);
   
-  return config;
+  return commands;
 }

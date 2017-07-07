@@ -3,13 +3,10 @@ const { translateConfig } = require('./helpers.js');
 
 describe('translateConfig', () => {
   describe('when passed with a valid config', () => {
-    const configFile = 'examples/sample2.yml';
-
-    it('should return json', () => {
-      fs.readFile(configFile, (err, config) => {
-        const commands = translateConfig(config);
-        expect(commands).toBe(false);
-      });
+    it('should return an array', () => {
+      const commands = translateConfig('name: test\ncommand: ls');
+      expect(Array.isArray(commands)).toBe(true);
+      expect(commands[0]).toBe('ls');
     });
   });
 
@@ -19,4 +16,18 @@ describe('translateConfig', () => {
       expect(commands.message).toBe('Invalid configuration');
     });
   });
+
+  describe('when passed with config examples/sample1.yml', () => {
+    const configFile = 'examples/sample1.yml';
+
+    it('should return appropriate commands', () => {
+      fs.readFile(configFile, (err, config) => {
+        const commands = translateConfig(config);
+        expect(commands).toBe(false);
+      });
+    });
+  });
+
+  // describe('when passed with config examples/sample2.yml');
+  // describe('when passed with config examples/sample3.yml');
 });

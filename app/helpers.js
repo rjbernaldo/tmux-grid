@@ -13,7 +13,7 @@ function translateConfig(configFile) {
 
   const commands = [];
 
-  if (config.panes && config.panes.length % 2 === 0) {
+  if (config && config.panes && config.panes.length % 2 === 0) {
     // console.log(config.panes);
   }
 

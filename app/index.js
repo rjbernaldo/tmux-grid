@@ -26,7 +26,6 @@ fs.readFile(program.config || '.tmux-grid.yml', 'utf8', (err, configFile) => {
     if (stdout === '') commands.unshift('tmux');
 
     exec(commands, (err, stdout, stderr) => {
-      // TODO: name window
       // console.log(stdout);
     });
   });

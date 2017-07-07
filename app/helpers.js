@@ -17,7 +17,6 @@ function translateConfig(configFile) {
     // console.log(config.panes);
   }
 
-  // TODO: error handling for unknown commands
   commands.push(config.command);
 
   return commands;

@@ -1,12 +1,12 @@
+#!/usr/bin/env node
+
 'use strict';
 
 const program = require('commander');
-const jsyaml = require('js-yaml');
-const packageJson = require('../package.json');
 const fs = require('fs');
-const config = '.tmux-grid.yml';
-const encoding = 'utf8';
 const { exec } = require('child_process');
+
+const packageJson = require('../package.json');
 const { translateConfig } = require('./helpers')
 
 program
@@ -17,24 +17,16 @@ program
   
 if (program.config === true) return program.outputHelp();
   
-fs.readFile(program.config || config, encoding, (err, configFile) => {
+fs.readFile(program.config || '.tmux-grid.yml', 'utf8', (err, configFile) => {
   if (err) return console.error(err.message);
-  
-  let parsedConfig;
-  
-  try {
-    parsedConfig = jsyaml.load(configFile);
-  } catch(e) {
-    return console.error(e);
-  }
+
+  const commands = translateConfig(configFile)
   
   exec('echo $TMUX', (err, stdout, stderr) => {
-    const commands = translateConfig(parsedConfig)
-
     if (stdout === '') commands.unshift('tmux');
-    // TODO: name window
 
     exec(commands, (err, stdout, stderr) => {
+      // TODO: name window
       // console.log(stdout);
     });
   });

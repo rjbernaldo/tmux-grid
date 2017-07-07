@@ -7,6 +7,7 @@ const fs = require('fs');
 const config = '.tmux-grid.yml';
 const encoding = 'utf8';
 const { exec } = require('child_process');
+const { translateConfig } = require('./helpers')
 
 program
   .version(packageJson.version)
@@ -27,7 +28,6 @@ fs.readFile(program.config || config, encoding, (err, configFile) => {
     return console.error(e);
   }
   
-
   exec('echo $TMUX', (err, stdout, stderr) => {
     const commands = translateConfig(parsedConfig)
 
@@ -35,20 +35,8 @@ fs.readFile(program.config || config, encoding, (err, configFile) => {
     // TODO: name window
 
     exec(commands, (err, stdout, stderr) => {
-      console.log(stdout);
+      // console.log(stdout);
     });
   });
 });
 
-function translateConfig(config) {
-  // TODO: error handling for unknown commands
-  const commands = []
-
-  if (config.panes && config.panes.length % 2 === 0) {
-    console.log(config.panes);
-  }
-
-  commands.push(config.command);
-  
-  return commands;
-}

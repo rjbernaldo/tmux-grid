@@ -10,7 +10,7 @@ function translateConfig(configFile) {
   }
 
   // TODO: error handling for unknown commands
-  const commands = []
+  const commands = [];
 
   if (config.panes && config.panes.length % 2 === 0) {
     console.log(config.panes);

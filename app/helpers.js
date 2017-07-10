@@ -13,6 +13,9 @@ function translateConfig(configFile) {
 
   const commands = [];
   commands.push(`tmux rename-window ${config.name}`);
+  if (config.command === 'split-v') {
+    commands.push('tmux split-window -d');
+  }
   commands.push(config.command);
 
   return commands;

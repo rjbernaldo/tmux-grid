@@ -5,9 +5,7 @@ describe('translateConfig', () => {
   describe('when passed with a valid config', () => {
     it('should return an array', () => {
       const commands = translateConfig('name: test\ncommand: ls');
-      // TODO: name window
       expect(Array.isArray(commands)).toBe(true);
-      expect(commands[0]).toBe('ls');
     });
   });
 
@@ -24,6 +22,7 @@ describe('translateConfig', () => {
     it('should return appropriate commands', () => {
       fs.readFile(configFile, (err, config) => {
         const commands = translateConfig(config);
+      // TODO: name window
         expect(Array.isArray(commands)).toBe(true);
       });
     });

@@ -5,7 +5,7 @@ panes:
     panes:
       - command: something1
       - command: something2
-  - commands: split-h
+  - command: split-h
     panes:
       - command: something3
       - command: something4

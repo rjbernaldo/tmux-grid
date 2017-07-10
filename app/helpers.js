@@ -12,11 +12,7 @@ function translateConfig(configFile) {
   if (!config || config === '') return new Error('Invalid configuration');
 
   const commands = [];
-
-  if (config && config.panes && config.panes.length % 2 === 0) {
-    // console.log(config.panes);
-  }
-
+  commands.push(`tmux rename-window ${config.name}`);
   commands.push(config.command);
 
   return commands;

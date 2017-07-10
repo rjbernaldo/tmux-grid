@@ -45,7 +45,7 @@ function generateCommands(config) {
       return new Error('Invalid configuration: panes');
     }
   } else {
-    commands.push(config.command);
+    commands.push(`tmux send-keys "${config.command}" Enter`);
   }
 
   return commands;

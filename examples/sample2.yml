@@ -3,9 +3,9 @@ command: split-v
 panes:
   - command: split-h
     panes:
-      - command: something1
-      - command: something2
+      - command: echo something1
+      - command: echo something2
   - command: split-h
     panes:
-      - command: something3
-      - command: something4
+      - command: echo something3
+      - command: echo something4

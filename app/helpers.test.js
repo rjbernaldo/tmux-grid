@@ -19,11 +19,13 @@ describe('translateConfig', () => {
   describe('when passed with config examples/sample1.yml', () => {
     const configFile = 'examples/sample1.yml';
 
-    it('should return appropriate commands', () => {
+    it('should return appropriate commands', (done) => {
       fs.readFile(configFile, (err, config) => {
         const commands = translateConfig(config);
-      // TODO: name window
         expect(Array.isArray(commands)).toBe(true);
+        expect(commands[0]).toBe('tmux rename-window sample1');
+        expect(commands[1]).toBe('ls');
+        done();
       });
     });
   });

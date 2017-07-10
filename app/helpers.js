@@ -1,11 +1,11 @@
 const jsyaml = require('js-yaml');
 
 function translateConfig(configFile) {
-  let config, error;
+  let config;
 
   try {
     config = jsyaml.load(configFile);
-  } catch(e) {
+  } catch (e) {
     console.error(e);
   }
 

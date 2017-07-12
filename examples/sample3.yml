@@ -3,7 +3,7 @@ command: split-v
 panes:
   - command: split-h
     panes:
-      - command: something1
-      - command: something2
+      - command: echo something1
+      - command: echo something2
   - size: 25
-    command: log something
+    command: echo something3

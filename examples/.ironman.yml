@@ -1,0 +1,10 @@
+name: ironman
+command: split-v
+panes:
+  - command: pwd && git status
+  - size: 25
+    command: split-h
+    panes:
+      - command: ping google.com
+      - command: cd ../docker-compose-scripts
+

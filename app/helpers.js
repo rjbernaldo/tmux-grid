@@ -30,6 +30,12 @@ function generateCommands(config) {
 
     commands.push(c);
 
+    if (config.size) {
+      const resizeCommand = config.command === 'split-v'
+        ? `tmux resize-pane -y${config.size}`
+        : `tmux resize-pane -x${config.size}`;
+    }
+
     if (config.panes && config.panes.length > 0) {
       for (let i = 0; i < config.panes.length; i++) {
         const pane = config.panes[i];

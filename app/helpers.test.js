@@ -57,6 +57,14 @@ describe('translateConfig', () => {
   });
 
   describe('when passed with config examples/sample3.yml', () => {
+    beforeAll(() => {
+      Object.defineProperty(process, 'stdout', {
+        value: {
+          rows: 54,
+          columns: 204,
+        },
+      });
+    });
     const configFile = 'examples/sample3.yml';
 
     it('should return appropriate commands', (done) => {

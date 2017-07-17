@@ -1,5 +1,5 @@
 # `tmux-grid` 
-[![Build Status](https://travis-ci.org/rjbernaldo/tmux-grid.svg?branch=master)](https://travis-ci.org/sindresorhus/is-camera-on-cli)
+[![Build Status](https://circleci.com/gh/rjbernaldo:tmux-grid.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/rjbernaldo:tmux-grid.svg?style=shield&circle-token=:circle-token)
 
 Setup and manage tmux panes using config files
 

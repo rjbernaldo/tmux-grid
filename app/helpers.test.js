@@ -73,7 +73,7 @@ describe('translateConfig', () => {
         expect(commands[7]).toBe('tmux select-pane -D');
         expect(commands[8]).toBe('tmux resize-pane -y 13');
         expect(commands[9]).toBe('tmux send-keys "echo something3" Enter');
-        expect(commands[13]).toBe('tmux select-pane -D');
+        expect(commands[10]).toBe('tmux select-pane -D');
         done();
       });
     });

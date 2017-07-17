@@ -1,5 +1,5 @@
 # `tmux-grid` 
-[![Build Status](https://circleci.com/gh/rjbernaldo/tmux-grid.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/rjbernaldo/tmux-grid.svg?style=shield&circle-token=:circle-token)
+[![Build Status](https://circleci.com/gh/rjbernaldo/tmux-grid.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/rjbernaldo/tmux-grid)
 
 Setup and manage tmux panes using config files
 

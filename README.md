@@ -11,12 +11,8 @@ $ npm install -g tmux-grid
 
 ## Usage
 
-1. Define panes inside a config file named `.tmux-grid`
+1. Define panes inside a config file named `.tmux-grid.yml`
 2. Run `tmux-grid` within the same directory
-
-## Configuration
-
-- WIP
 
 ## Examples
 

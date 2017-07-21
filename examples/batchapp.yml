@@ -5,6 +5,6 @@ panes:
   - size: 40
     command: split-v
     panes:
-      - command: ping google.com
+      - command: ll
       - command: docker ps
 

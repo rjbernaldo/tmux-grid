@@ -1,4 +1,4 @@
-name: ironman
+name: batchapp
 command: split-h
 panes:
   - command: pwd && git status
